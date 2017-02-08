@@ -16,7 +16,7 @@ function toFahrenheit (degree) {
 	return fahrenheit;
 }
 
-
+//Button Actions - Calculate:
 button.addEventListener("click", function(){
     if (toCelRadio.checked) {
 	var degree = document.getElementById("original").value;
@@ -28,8 +28,13 @@ button.addEventListener("click", function(){
     answer.innerHTML = toFahrenheit(degree);
 	}
 });
-
-
+//Button Actions - Clear all inputs:
+clearButton.addEventListener("click", function(){
+	var degree = document.getElementById("original").value = "";
+	toCelRadio.checked = false;
+	toFarRadio.checked = false;
+	answer.innerHTML = "";
+})
 
 
 
