@@ -1,5 +1,7 @@
 //Variables declaring references
 var answer = document.getElementById("answer");
+var degree = document.getElementById("original").value;
+var degree = document.getElementById("original").classList;
 var toFarRadio = document.getElementById("toFar");
 var toCelRadio = document.getElementById("toCel");
 var button = document.getElementById("calculate");
@@ -21,13 +23,28 @@ button.addEventListener("click", function(){
     if (toCelRadio.checked) {
 	var degree = document.getElementById("original").value;
     console.log(degree);
-    answer.innerHTML = toCelsius(degree);
+    	//Change font colors
+    	if (toCelsius(degree) > 32){
+    		answer.innerHTML = "<h2 class='red'>" + toCelsius(degree).toFixed(2) + "C" + "</h2>";
+    	} else if (toCelsius(degree) < 0){
+    		answer.innerHTML = "<h2 class='blue'>" + toCelsius(degree).toFixed(2) + "C" + "</h2>";
+    	} else {
+    		answer.innerHTML = "<h2 class='green'>" + toCelsius(degree).toFixed(2) + "C" + "</h2>";
+    		}
 	} else if (toFarRadio.checked){
 	var degree = document.getElementById("original").value;
     console.log(degree);
-    answer.innerHTML = toFahrenheit(degree);
+    	//Change font colors
+    	if (toFahrenheit(degree) > 90){
+    		answer.innerHTML = "<h2 class='red'>" + toFahrenheit(degree).toFixed(2) + "F" + "</h2>";
+    	} else if (toFahrenheit(degree) < 32) {
+    		answer.innerHTML = "<h2 class='blue'>" + toFahrenheit(degree).toFixed(2) + "F" + "</h2>";
+    	} else {
+    		answer.innerHTML = "<h2 class='green'>" + toFahrenheit(degree).toFixed(2) + "F" + "</h2>";
+    	}
 	}
 });
+
 //Button Actions - Clear all inputs:
 clearButton.addEventListener("click", function(){
 	var degree = document.getElementById("original").value = "";
@@ -35,6 +52,7 @@ clearButton.addEventListener("click", function(){
 	toFarRadio.checked = false;
 	answer.innerHTML = "";
 })
+
 
 
 
