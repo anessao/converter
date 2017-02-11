@@ -7,7 +7,7 @@
 	<body>
 		<!-- In the HTML, have one input field where someone can enter in a temperature. -->
 			<legend for="original">What's your temperature?</legend>	
-			<input id="original" name="original" type="number">
+			<input id="original" name="original" type="number" onkeypress="return enterKey(event)">
 		<!-- Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to. -->
 			<legend for="temp">Chose your starting temp:</legend>
 			<input id="toFar" type="radio" name="startTemp" value="c">Celsius to Fahrenheit<br>

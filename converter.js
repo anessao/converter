@@ -17,7 +17,7 @@ function toFahrenheit (degree) {
 }
 
 //Button Actions - Calculate:
-button.addEventListener("click", function(){
+button.addEventListener("click", function myKeyPress(){
     if (toCelRadio.checked) {
 	var degree = document.getElementById("original").value;
     	//Change font colors
@@ -48,6 +48,13 @@ clearButton.addEventListener("click", function(){
 	toFarRadio.checked = false;
 	answer.innerHTML = "";
 })
+
+var enterKey = function(e) {
+if(e.keyCode === 13) { // 13 is keycode for the ENTER key
+        myKeyPress();
+    }
+
+}
 
 
 
